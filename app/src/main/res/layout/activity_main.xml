@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="자산정보"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/listScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@id/floatingBtn"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        tools:ignore="ScrollViewCount">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="116dp" />
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="사원명"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/nameEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/teamTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="부서"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameTextView" />
+
+            <EditText
+                android:id="@+id/teamEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/nameTextView"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/typeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="구분"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/teamTextView" />
+
+            <Spinner
+                android:id="@+id/typeSpinner"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:autofillHints="선택해주세요"
+                android:gravity="center"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/teamTextView"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/commentTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="비고"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/typeTextView" />
+
+            <EditText
+                android:id="@+id/commentEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/typeTextView"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/ipTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="IP"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/commentTextView" />
+
+            <EditText
+                android:id="@+id/ipEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/commentTextView"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/dateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="취득일"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ipTextView" />
+
+
+            <EditText
+                android:id="@+id/dateEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/ipTextView"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/textTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="한글"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dateTextView" />
+
+
+            <EditText
+                android:id="@+id/textEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/textTextView"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/acrobatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="Acrobat"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTextView" />
+
+
+            <EditText
+                android:id="@+id/acrobatEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/dateTextView"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/cadTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="CAD"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/acrobatTextView" />
+
+
+            <EditText
+                android:id="@+id/cadEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/acrobatTextView"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/photoshopTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="포토샵"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cadTextView" />
+
+
+            <EditText
+                android:id="@+id/photoshopEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/cadTextView"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/etcTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="SOLIDWORKS"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/photoshopTextView" />
+
+
+            <EditText
+                android:id="@+id/etcEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/photoshopTextView"
+                tools:ignore="LabelFor" />
+
+
+            <TextView
+                android:id="@+id/commentTextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="비고"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etcTextView" />
+
+
+            <EditText
+                android:id="@+id/commentEditText2"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/etcTextView"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/idTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="수정(id)"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/commentTextView2" />
+
+
+            <EditText
+                android:id="@+id/idEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="입력해주세요"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/commentTextView2"
+                tools:ignore="LabelFor" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toTopOf="@+id/updateBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listScrollView" />
+
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="저장하기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/delBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="삭제"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/updateBtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="업데이트"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/delBtn"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toEndOf="@+id/saveBtn" />
+
+    <Button
+        android:id="@+id/viewBtn"
+        android:layout_width="79dp"
+        android:layout_height="50dp"
+        android:text="보기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/updateBtn"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toEndOf="@+id/saveBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
